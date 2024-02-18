@@ -1,0 +1,189 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(../img/Fondo.jpg);
+    background-size: cover;
+    animation: gradientBG 7s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+
+.container {
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 2px solid rgba(157, 131, 110, 0.7);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(157, 131, 110, 0.7);
+    box-shadow: 0 0 15px rgba(157, 131, 110, 0.6), 0 0 30px rgba(157, 131, 110, 0.6), 0 0 60px rgba(157, 131, 110, 0.6);
+}
+
+.container:hover {
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Georgia', serif;
+    font-size: 60px;
+    width: 100%;
+    padding: 0.8rem;
+    background: rgb(0,0,0, 0.6);
+    color: rgba(157, 131, 110, 1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+.titletwo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Georgia', serif;
+    font-size: 60px;
+    width: 100%;
+    padding: 0.8rem;
+    background: rgb(0,0,0, 0.6);
+    color: rgba(157, 131, 110, 1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.title, .titletwo {
+    font-family: 'coolvetica', serif;
+}
+h1 {
+    font-family: 'Georgia', serif;
+    color: rgba(157, 131, 110, 1);
+    margin-bottom: 30px;
+}
+
+.input-wrapper {
+    margin-bottom: 20px;
+    background-color: transparent;
+    padding: 15px; 
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+input[type="file"] + label {
+    font-size: 16px;
+    color: white;
+    background-color: #5d6d7e;
+    display: inline-block;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(157, 131, 110, 0.5);
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+input[type="file"] + label, .submit-btn {
+    font-size: 16px;
+    color: black;
+    background-color: rgba(157, 131, 110, 1);
+    display: inline-block;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(157, 131, 110, 0.5);
+    box-shadow: 0 4px 8px rgba(93, 109, 126, 0.4);
+}
+
+input[type="file"] + label:hover, .submit-btn:hover {
+    background-color: #34495e;
+    box-shadow: 0 6px 12px rgba(52, 73, 94, 0.6), 0 0 15px rgba(52, 73, 94, 0.4);
+    transform: translateY(-2px); 
+}
+
+#file-name {
+    color: rgba(157, 131, 110, 1); 
+    font-size: 16px; 
+    margin-top: 10px; 
+}
+
+.submit-btn {
+    background-color: rgba(157, 131, 110, 1);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: rgba(157, 131, 110, 1);
+}
+h2 {
+    color: rgba(157, 131, 110, 1);
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid rgba(157, 131, 110, 1);
+    text-align: left;
+    color: rgba(157, 131, 110, 1);
+}
+
+th {
+    background-color: rgba(157, 131, 110, 1);
+    color: black;
+    font-size: 1.1rem;
+}
+
+@font-face {
+    font-family: 'coolvetica';
+    src: url('../font/coolvetica.otf') format('truetype'),
+         url('../font/coolvetica.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}

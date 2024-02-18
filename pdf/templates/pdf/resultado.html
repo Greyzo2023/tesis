@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proyecto de Tesis</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'pdf/css/style.css' %}">
+</head>
+<body>
+    <div class="titletwo">Proyecto de Tesis - Resultados</div>
+    <div class="container">
+        <h2>Resultados de Expresiones Regulares</h2>
+        <table>
+            <tr>
+                <th>Número de sentencia:</th>
+                <td>{{ pattern1 }}</td>
+            </tr>
+            <tr>
+                <th>Decisum:</th>
+                <td>
+                    <ul>
+                        {% for item in pattern2 %}
+                            <li>{{ item|safe }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Antecedentes:</th>
+                <td>{{ summary|safe }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

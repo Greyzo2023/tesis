@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tesis</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'pdf/css/style.css' %}">
+</head>
+<body>
+    <div class="title">Proyecto de Tesis</div>
+    <div class="container">
+        <h1>Subir Archivo PDF</h1>
+        <form action="{% url 'file-upload' %}" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <div class="input-wrapper">
+                <input type="file" name="document" id="file-upload" accept=".pdf" onchange="validateFileType()">
+                <label for="file-upload">Elegir archivo</label>
+                <div id="file-name"></div>
+            </div>
+            <button type="submit" class="submit-btn">Subir Archivo</button>
+        </form>
+    </div>
+</body>
+
+
+<script>
+    function validateForm() {
+        var x = document.getElementById("file-upload").value;
+        if (x == "") {
+            alert("Por favor, suba el archivo pertinente.");
+            return false;
+        }
+        return true;
+    }
+</script>
+
+
+<script>
+    document.getElementById('file-upload').onchange = function () {
+        document.getElementById('file-name').textContent = '(' + this.files[0].name + ')';
+    };
+</script>
+
+<script>
+    function validateFileType() {
+        var fileName = document.getElementById('file-upload').value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile != "pdf") {
+            alert("Solo se permiten archivos PDF");
+            document.getElementById('file-upload').value = ""; 
+            document.getElementById('file-name').textContent = ""; 
+        } else {
+            document.getElementById('file-name').textContent = '(' + document.getElementById('file-upload').files[0].name + ')';
+        }
+    }
+    
+
+</script>
+
+
+</html>
+
